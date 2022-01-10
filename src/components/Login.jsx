@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
+import "../styles/Login.css";
 
 function Login() {
 	const [name, setname] = useState("");
@@ -28,9 +30,7 @@ function Login() {
 
 	return (
 		<div className="container">
-			<header className="App-header">
-				<h1>Twitter Utility</h1>
-			</header>
+			<Header />
 			<div className="log-form">
 				<h2>Login to your account</h2>
 				<form>

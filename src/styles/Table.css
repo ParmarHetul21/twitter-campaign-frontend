@@ -1,0 +1,48 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  #tweets {
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+  
+  .filters{
+    display: flex;
+    justify-content: end;
+    margin: 20px 20px;
+    height: 35px; 
+  }
+
+  #btn-next {
+    background-color: cornflowerblue;
+    color: white;
+    padding: 15px;
+    font-size: 15pt;
+    margin-right: 15px;
+    border: none;
+  }
+
+  #btn-previous {
+      background-color: cornflowerblue;
+      color: white;
+      padding: 15px 20px;
+      font-size: 15pt;
+      border: none;
+  }
+
+  .btn-btn-align {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+  }
+
+  #search{
+    border: 1px solid black;
+    background: white;
+  } 
+

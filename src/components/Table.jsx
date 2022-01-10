@@ -1,6 +1,8 @@
 import { React, useMemo } from "react";
 import { useTable } from "react-table";
 import campaignData from "../source/campaign_data.json";
+import Header from "./Header";
+import "../styles/Table.css";
 
 export default function Table() {
 	const columns = useMemo(
@@ -56,36 +58,53 @@ export default function Table() {
 	});
 
 	return (
-		<div id="tweets">
-			<table {...getTableProps()} id="table">
-				<thead>
-					{headerGroups.map(headerGroup =>
-						<tr {...headerGroup.getHeaderGroupProps()}>
-							{headerGroup.headers.map(column =>
-								<th {...column.getHeaderProps()}>
-									{column.render("Header")}
-								</th>
-							)}
-						</tr>
-					)}
-				</thead>
-				<tbody {...getTableBodyProps()}>
-					{rows.map((row, i) => {
-						prepareRow(row);
-						return (
-							<tr {...row.getRowProps()}>
-								{row.cells.map(cell => {
-									return (
-										<td {...cell.getCellProps()}>
-											{cell.render("Cell")}
-										</td>
-									);
-								})}
+		<div>
+			<Header />
+			<div className="filters">
+				<input
+					type="search"
+					class="filter_inputs"
+					name="search"
+					id="search"
+					placeholder="seach here"
+				/>
+				<input type="button" value="search" id="btn-search" />
+			</div>
+			<div id="tweets">
+				<table {...getTableProps()} id="table">
+					<thead>
+						{headerGroups.map(headerGroup =>
+							<tr {...headerGroup.getHeaderGroupProps()}>
+								{headerGroup.headers.map(column =>
+									<th {...column.getHeaderProps()}>
+										{column.render("Header")}
+									</th>
+								)}
 							</tr>
-						);
-					})}
-				</tbody>
-			</table>
+						)}
+					</thead>
+					<tbody {...getTableBodyProps()}>
+						{rows.map((row, i) => {
+							prepareRow(row);
+							return (
+								<tr {...row.getRowProps()}>
+									{row.cells.map(cell => {
+										return (
+											<td {...cell.getCellProps()}>
+												{cell.render("Cell")}
+											</td>
+										);
+									})}
+								</tr>
+							);
+						})}
+					</tbody>
+				</table>
+			</div>
+			<div class="btn-btn-align">
+				<button id="btn-next">Next</button>
+				<button id="btn-previous">Previous</button>
+			</div>
 		</div>
 	);
 }
