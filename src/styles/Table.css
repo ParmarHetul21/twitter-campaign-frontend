@@ -7,15 +7,15 @@ table, th, td {
   
   #tweets {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column-reverse;
   }
   
   .filters{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin: 20px 20px;
-    height: 35px; 
+    height: 35px;
   }
 
   #btn-next {

@@ -6,12 +6,28 @@
 
 .App-header {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: cornflowerblue;
   padding: 5px 20px;
-  color: cornsilk;
+  color: #eaeaea;
   font-family: sans-serif;
   font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-link{
+  display: flex;  
+  justify-content: space-around;
+  margin-top: 3px;
+  align-items: center;
+  column-gap: 20px;
+  font-size: 22px;
+}
+
+.nav-link a{
+  text-decoration: none;
+  color: #eaeaea;
 }
 
 body {

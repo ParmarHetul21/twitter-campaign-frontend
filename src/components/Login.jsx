@@ -20,7 +20,8 @@ function Login() {
 
 	const onLoginChnage = e => {
 		if (name === "pratik" && password === "Jain@123") {
-			navigate("/table");
+			localStorage.setItem("login", true);
+			navigate("/");
 		} else if (name === "" && password === "") {
 			error.style.display = "block";
 		} else {
@@ -33,7 +34,7 @@ function Login() {
 			<Header />
 			<div className="log-form">
 				<h2>Login to your account</h2>
-				<form>
+				<form id="form-control" action="#">
 					<input
 						type="text"
 						title="username"
